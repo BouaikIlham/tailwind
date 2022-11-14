@@ -1,7 +1,14 @@
 <div class=" container mx-auto pt-5" >
-<h1 class="text-5xl">Pages#home</h1>
-<p class="text-lg font-light leading-relaxed mt-6 mb-4 text-pink-800">Find me in app/views/pages/home.html.erb</p>
+<h1 class="text-5xl">Counter</h1>
+<p class="text-lg font-light leading-relaxed mt-6 mb-4 text-pink-800">In digital logic and computing, a counter is a device which stores the number of times a particular event or process has occurred, often in relationship to a clock. The most common type is a sequential digital logic circuit with an input line called the clock and multiple output lines.</p>
 <%= content_tag(:div, "", data: {
     controller: "counter"
-}) %>
+}) do %>
+    <%= content_tag(:p, "You haven't clicked the button", data: {
+        counter_target:  "output"
+    })%>
+    <%= content_tag(:button, "Increment Counter", data: {
+        action:  "click->counter#increment"
+    }, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded")%>
+<% end%>
 </div>
